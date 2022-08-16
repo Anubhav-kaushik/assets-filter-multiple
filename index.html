@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="data.js"></script>
+</head>
+
+<body>
+
+  <!-- MAIN (Center website) -->
+  <main>
+    <h1>RESOURCES</h1>
+    <hr>
+
+    <div class="filter-btns-container" id="filter-1" data-filter="1">
+      <div id="category-selection-container" class="btn-container filter-btn-container">
+        <span class="btn-type"><strong>Category: </strong></span>
+        <button class="btn" data-status="active" data-type="category" data-class="all" onclick="toggleStatus(this)">Show
+          all</button>
+        <button class="btn" data-type="category" data-class="nature" onclick="toggleStatus(this)">Nature</button>
+        <button class="btn" data-type="category" data-class="cars" onclick="toggleStatus(this)">Cars</button>
+        <button class="btn" data-type="category" data-class="people" onclick="toggleStatus(this)">People</button>
+      </div>
+
+      <div id="oraganization-selection-container" class="btn-container filter-btn-container">
+        <span class="btn-type"><strong>Organization: </strong></span>
+        <button class="btn" data-status="active" data-type="organization" data-class="all" onclick="toggleStatus(this)">
+          Show all</button>
+        <button class="btn" data-type="organization" data-class="organization 1" onclick="toggleStatus(this)">
+          Organization 1</button>
+        <button class="btn" data-type="organization" data-class="organization 2" onclick="toggleStatus(this)">
+          Organization 2</button>
+      </div>
+    </div>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row" id="content-container-id">
+      <div class="column" data-category="nature" data-organization="organization 1">
+        <div class="content">
+          <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Mountains" style="width:100%">
+          <h4>Mountains</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column" data-category="nature" data-organization="organization 1">
+        <div class="content">
+          <img src="https://www.w3schools.com//w3images/lights.jpg" alt="Lights" style="width:100%">
+          <h4>Lights</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column" data-category="nature" data-organization="organization 1">
+        <div class="content">
+          <img src="https://www.w3schools.com//w3images/nature.jpg" alt="Nature" style="width:100%">
+          <h4>Forest</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column" data-category="cars" data-organization="organization 2">
+        <div class="content">
+          <img src="https://www.w3schools.com//w3images/cars1.jpg" alt="Car" style="width:100%">
+          <h4>Retro</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column" data-category="cars" data-organization="organization 1">
+        <div class="content">
+          <img src="https://www.w3schools.com//w3images/cars2.jpg" alt="Car" style="width:100%">
+          <h4>Fast</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column" data-category="cars" data-organization="organization 2">
+        <div class="content">
+          <img src="https://www.w3schools.com//w3images/cars3.jpg" alt="Car" style="width:100%">
+          <h4>Classic</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column" data-category="people" data-organization="organization 2">
+        <div class="content">
+          <img src="https://www.w3schools.com//w3images/people1.jpg" alt="Car" style="width:100%">
+          <h4>Girl</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column" data-category="people" data-organization="organization 1">
+        <div class="content">
+          <img src="https://www.w3schools.com//w3images/people2.jpg" alt="Car" style="width:100%">
+          <h4>Man</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column" data-category="people" data-organization="organization 2">
+        <div class="content">
+          <img src="https://www.w3schools.com//w3images/people3.jpg" alt="Car" style="width:100%">
+          <h4>Woman</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <!-- END GRID -->
+    </div>
+
+    <!-- END MAIN -->
+  </main>
+
+  <script src="basic-func.js"></script>
+  <script src="creation.js"></script>
+  <script>
+    const contentSelector = '#content-container-id';
+    const contentContainer = document.querySelector(contentSelector);
+
+    const categoriesBtnContainerSelector = '#category-selection-container';
+    const categoriesBtnContainer = document.querySelector(categoriesBtnContainerSelector);
+
+    const organizationBtnContainerSelector = '#oraganization-selection-container';
+    const organizationBtnContainer = document.querySelector(organizationBtnContainerSelector);
+
+    // add the content on the page
+    addAssets(contentContainer, assetsInfo)
+
+    // add the buttons
+    addFilterBtns(organizationBtnContainer, 'organization', assetsInfo);
+    addFilterBtns(categoriesBtnContainer, 'category', assetsInfo);
+  </script>
+  <script src="action.js"></script>
+  <script>
+    // Main
+    showSelected('#filter-1 .filter-btn-container')
+  </script>
+
+</body>
+
+</html>
